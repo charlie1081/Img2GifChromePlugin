@@ -15,7 +15,6 @@
 
 - **一鍵選圖**：在 X 發文視窗的「發佈」按鈕旁邊加一個 GIF 按鈕。
 - **支援格式**：`JPG` / `PNG` / `WEBP` / `GIF`。
-- **真正輸出 GIF**：不是改副檔名騙人，是產出真正 `image/gif`。
 - **不落地、不下載**：轉完直接塞進 X 的上傳框（模擬選檔）。
 - **本機端處理**：轉檔在瀏覽器內完成，不會上傳到任何第三方伺服器。
 
@@ -34,13 +33,16 @@
 
 > 這是「未上架 Chrome Web Store」時最常用的安裝方式。
 
-1. 打開 Chrome，進入：
-   - `chrome://extensions/`
+1. 開啟下面連結
+   - [URL](chrome://extensions/)
 2. 右上角打開：
    - **Developer mode / 開發人員模式**
+   ![示意圖](./img/openDevelopeMode.png)
 3. 點擊：
    - **Load unpacked / 載入未封裝項目**
+   ![示意圖](./img/loadPlugin.png)
 4. 選擇這個專案的資料夾（包含 `manifest.json` 那層）
+   ![示意圖](./img/chooseFolder.png)
 5. 載入成功後，到 `https://x.com` 重新整理頁面（F5）
 
 ---
