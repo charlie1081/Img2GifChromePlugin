@@ -1,0 +1,75 @@
+{
+  "appName": {
+    "message": "圖片轉 GIF 轉換器"
+  },
+  "appDescription": {
+    "message": "在 Twitter 上直接將圖片轉換為 GIF"
+  },
+  "convertImageToGif": {
+    "message": "轉換圖片為 GIF"
+  },
+  "popupTitle": {
+    "message": "🎬 圖片轉 GIF"
+  },
+  "popupDescription": {
+    "message": "在 Twitter 發文視窗中點擊 GIF 圖標，選擇圖片進行轉換。"
+  },
+  "extensionEnabled": {
+    "message": "✓ 擴充功能已啟用"
+  },
+  "gifConverterNotLoaded": {
+    "message": "✗ GIF 轉換器未載入（請重新整理擴充功能）"
+  },
+  "unsupportedFormat": {
+    "message": "✗ 不支援的檔案格式: $FILE_NAME$",
+    "placeholders": {
+      "file_name": {
+        "content": "$1"
+      }
+    }
+  },
+  "conversionFailed": {
+    "message": "✗ 轉換失敗: $ERROR_MESSAGE$",
+    "placeholders": {
+      "error_message": {
+        "content": "$1"
+      }
+    }
+  },
+  "imageConverted": {
+    "message": "✓ 圖片 $INDEX$ 已轉換並上傳",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
+  },
+  "conversionAborted": {
+    "message": "✗ GIF 轉換已中止"
+  },
+  "imageNotLoaded": {
+    "message": "✗ 圖片 $INDEX$ 無法載入",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
+  },
+  "fileReadError": {
+    "message": "✗ 無法讀取檔案: $FILE_NAME$",
+    "placeholders": {
+      "file_name": {
+        "content": "$1"
+      }
+    }
+  },
+  "fileInputNotFound": {
+    "message": "✗ 找不到 Twitter 的檔案輸入框"
+  },
+  "foundTweetButton": {
+    "message": "✓ 找到發佈按鈕，準備在旁邊添加 GIF 按鈕"
+  },
+  "gifButtonAdded": {
+    "message": "✓ GIF 按鈕已成功添加到發佈按鈕旁邊"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "appName": {
+    "message": "Image to GIF Converter"
+  },
+  "appDescription": {
+    "message": "Convert images to GIF directly from Twitter"
+  },
+  "convertImageToGif": {
+    "message": "Convert Image to GIF"
+  },
+  "popupTitle": {
+    "message": "🎬 Image to GIF"
+  },
+  "popupDescription": {
+    "message": "Click the GIF icon in the Twitter compose window to select images for conversion."
+  },
+  "extensionEnabled": {
+    "message": "✓ Extension enabled"
+  },
+  "gifConverterNotLoaded": {
+    "message": "✗ GIF converter not loaded (please refresh the extension)"
+  },
+  "unsupportedFormat": {
+    "message": "✗ Unsupported file format: $FILE_NAME$",
+    "placeholders": {
+      "file_name": {
+        "content": "$1"
+      }
+    }
+  },
+  "conversionFailed": {
+    "message": "✗ Conversion failed: $ERROR_MESSAGE$",
+    "placeholders": {
+      "error_message": {
+        "content": "$1"
+      }
+    }
+  },
+  "imageConverted": {
+    "message": "✓ Image $INDEX$ converted and uploaded",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
+  },
+  "conversionAborted": {
+    "message": "✗ GIF conversion aborted"
+  },
+  "imageNotLoaded": {
+    "message": "✗ Image $INDEX$ failed to load",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
+  },
+  "fileReadError": {
+    "message": "✗ Unable to read file: $FILE_NAME$",
+    "placeholders": {
+      "file_name": {
+        "content": "$1"
+      }
+    }
+  },
+  "fileInputNotFound": {
+    "message": "✗ Twitter file input not found"
+  },
+  "foundTweetButton": {
+    "message": "✓ Found tweet button, preparing to add GIF button"
+  },
+  "gifButtonAdded": {
+    "message": "✓ GIF button successfully added next to tweet button"
+  }
+}

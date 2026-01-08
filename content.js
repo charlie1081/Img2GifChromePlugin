@@ -1,3 +1,8 @@
+// Localization helper function
+function getMessage(key, substitutions) {
+  return chrome.i18n.getMessage(key, substitutions);
+}
+
 // 監聽 DOM 變化，檢查發文彈窗是否出現
 const observer = new MutationObserver(() => {
   injectButton();
@@ -40,7 +45,7 @@ function injectButton() {
       return;
     }
     
-    console.log(`✓ 找到發佈按鈕，準備在旁邊添加 GIF 按鈕`);
+    console.log(getMessage('foundTweetButton'));
     addGifButtonNextToTweetButton(tweetButton);
   });
 }
@@ -49,9 +54,9 @@ function addGifButtonNextToTweetButton(tweetButton) {
   // 創建 GIF 按鈕容器
   const gifButton = document.createElement('button');
   gifButton.className = 'image-to-gif-btn css-175oi2r r-sdzlij r-1phboty r-rs99b7 r-lrvibr r-1cwvpvk r-2yi16 r-1qi8awa r-3pj75a r-o7ynqc r-6416eg r-1ny4l3l';
-  gifButton.title = 'Convert Image to GIF';
+  gifButton.title = getMessage('convertImageToGif');
   gifButton.type = 'button';
-  gifButton.setAttribute('aria-label', 'Convert Image to GIF');
+  gifButton.setAttribute('aria-label', getMessage('convertImageToGif'));
   gifButton.style.backgroundColor = 'rgb(239, 243, 244)';
   gifButton.style.borderColor = 'rgba(0, 0, 0, 0)';
   gifButton.style.marginLeft = '12px';
@@ -97,7 +102,7 @@ function addGifButtonNextToTweetButton(tweetButton) {
   
   // 在發佈按鈕前插入 GIF 按鈕
   tweetButton.parentElement.insertBefore(gifButton, tweetButton);
-  console.log('✓ GIF 按鈕已成功添加到發佈按鈕旁邊');
+  console.log(getMessage('gifButtonAdded'));
 }
 
 function openImagePicker() {
@@ -121,14 +126,14 @@ function convertToGif(files) {
   const supportedFormats = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
 
   if (typeof GIF === 'undefined') {
-    showNotification('✗ GIF 轉換器未載入（請重新整理擴充功能）');
+    showNotification(getMessage('gifConverterNotLoaded'));
     return;
   }
 
   files.forEach((file, index) => {
     const fileType = (file.type || '').toLowerCase();
     if (!supportedFormats.includes(fileType)) {
-      showNotification(`✗ 不支援的檔案格式: ${file.name}`);
+      showNotification(getMessage('unsupportedFormat', file.name));
       return;
     }
 
@@ -154,8 +159,8 @@ function convertToGif(files) {
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(img, 0, 0);
           } catch (error) {
-            console.error('轉換錯誤:', error);
-            showNotification(`✗ 轉換失敗: ${error.message}`);
+            console.error('Conversion error:', error);
+            showNotification(getMessage('conversionFailed', error.message));
             URL.revokeObjectURL(url);
             return;
           }
@@ -180,34 +185,34 @@ function convertToGif(files) {
               gif.on('finished', (gifBlob) => {
                 const gifName = file.name.replace(/\.[^/.]+$/, '') + '.gif';
                 uploadToTwitter(gifBlob, gifName);
-                showNotification(`✓ 圖片 ${index + 1} 已轉換並上傳`);
+                showNotification(getMessage('imageConverted', (index + 1).toString()));
               });
 
               gif.on('abort', () => {
-                showNotification('✗ GIF 轉換已中止');
+                showNotification(getMessage('conversionAborted'));
               });
 
               gif.render();
             })
             .catch((err) => {
-              console.error('載入 GIF worker 失敗:', err);
-              showNotification(`✗ 轉換失敗: ${err.message}`);
+              console.error('Failed to load GIF worker:', err);
+              showNotification(getMessage('conversionFailed', err.message));
             });
         };
 
         img.onerror = () => {
           URL.revokeObjectURL(url);
-          showNotification(`✗ 圖片 ${index + 1} 無法載入`);
+          showNotification(getMessage('imageNotLoaded', (index + 1).toString()));
         };
 
         img.src = url;
       } catch (error) {
-        showNotification(`✗ 轉換失敗: ${error.message}`);
+        showNotification(getMessage('conversionFailed', error.message));
       }
     };
 
     reader.onerror = () => {
-      showNotification(`✗ 無法讀取檔案: ${file.name}`);
+      showNotification(getMessage('fileReadError', file.name));
     };
 
     reader.readAsArrayBuffer(file);
@@ -219,7 +224,7 @@ function uploadToTwitter(blob, fileName) {
   const fileInput = document.querySelector('[data-testid="fileInput"]');
   
   if (!fileInput) {
-    showNotification('✗ 找不到推特的檔案輸入框');
+    showNotification(getMessage('fileInputNotFound'));
     return;
   }
   
@@ -235,7 +240,7 @@ function uploadToTwitter(blob, fileName) {
   const event = new Event('change', { bubbles: true });
   fileInput.dispatchEvent(event);
   
-  console.log(`✓ 已上傳圖片到推特: ${fileName}`);
+  console.log(`✓ Image uploaded to Twitter: ${fileName}`);
 }
 
 function showNotification(message) {

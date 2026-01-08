@@ -1,0 +1,75 @@
+{
+  "appName": {
+    "message": "画像をGIFに変換"
+  },
+  "appDescription": {
+    "message": "Twitterから直接画像をGIFに変換"
+  },
+  "convertImageToGif": {
+    "message": "画像をGIFに変換"
+  },
+  "popupTitle": {
+    "message": "🎬 画像をGIFに変換"
+  },
+  "popupDescription": {
+    "message": "Twitterの投稿ウィンドウでGIFアイコンをクリックして、画像を選択して変換します。"
+  },
+  "extensionEnabled": {
+    "message": "✓ 拡張機能が有効です"
+  },
+  "gifConverterNotLoaded": {
+    "message": "✗ GIF変換ツールが読み込まれていません（拡張機能を更新してください）"
+  },
+  "unsupportedFormat": {
+    "message": "✗ サポートされていないファイル形式: $FILE_NAME$",
+    "placeholders": {
+      "file_name": {
+        "content": "$1"
+      }
+    }
+  },
+  "conversionFailed": {
+    "message": "✗ 変換に失敗しました: $ERROR_MESSAGE$",
+    "placeholders": {
+      "error_message": {
+        "content": "$1"
+      }
+    }
+  },
+  "imageConverted": {
+    "message": "✓ 画像 $INDEX$ が変換されてアップロードされました",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
+  },
+  "conversionAborted": {
+    "message": "✗ GIF変換が中止されました"
+  },
+  "imageNotLoaded": {
+    "message": "✗ 画像 $INDEX$ を読み込めません",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
+  },
+  "fileReadError": {
+    "message": "✗ ファイルを読み込めません: $FILE_NAME$",
+    "placeholders": {
+      "file_name": {
+        "content": "$1"
+      }
+    }
+  },
+  "fileInputNotFound": {
+    "message": "✗ Twitterのファイル入力が見つかりません"
+  },
+  "foundTweetButton": {
+    "message": "✓ ツイートボタンが見つかりました。GIFボタンを追加する準備をしています"
+  },
+  "gifButtonAdded": {
+    "message": "✓ GIFボタンがツイートボタンの隣に正常に追加されました"
+  }
+}
